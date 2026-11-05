@@ -1,0 +1,66 @@
+# Copy to application.yml for local runs (application.yml is gitignored).
+# Prefer env vars for secrets in shared or production environments.
+
+spring:
+  application:
+    name: landata
+  datasource:
+    url: ${LANDATA_DB_URL:jdbc:sqlserver://localhost:1433;databaseName=landata;encrypt=true;trustServerCertificate=true}
+    username: ${LANDATA_DB_USER:sa}
+    password: ${LANDATA_DB_PASSWORD:Landata_1234}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.jdbc.time_zone: UTC
+      hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+  flyway:
+    enabled: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    deserialization:
+      fail-on-unknown-properties: false
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+landata:
+  jwt:
+    secret: ${LANDATA_JWT_SECRET:dev-only-change-this-secret-key-32b}
+    access-minutes: 15
+    refresh-days: 14
+  crypto:
+    keyset-path: ${LANDATA_KEYSET_PATH:./data/tink-keyset.json}
+  security:
+    allow-private-networks: true
+  datasource:
+    allowed-ports: 1433,3306,5432,5433,5439,1521,3307,8123,8443,9000,443,8080,9092,10000
+  auth:
+    expose-dev-tokens: true
+  ai:
+    cursor-base-url: https://api.cursor.com
+    platform-api-key: ${CURSOR_API_KEY:}
+  platform-admin-emails:
+    - you@example.com
+  platform-admin-branch-codes: []
+
+jobrunr:
+  background-job-server:
+    enabled: true
+  dashboard:
+    enabled: false
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    persist-authorization: true

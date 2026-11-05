@@ -1,0 +1,97 @@
+{
+  "main": "AGENT.md",
+  "dialects": "dialects.md",
+  "schema_example": "schema-example.md",
+  "charts": [
+    {
+      "chart_type": "scalar",
+      "file": "charts/scalar.md",
+      "description": "One number"
+    },
+    {
+      "chart_type": "scalar_comparison",
+      "file": "charts/scalar-comparison.md",
+      "description": "One number vs previous period"
+    },
+    {
+      "chart_type": "gauge",
+      "file": "charts/gauge.md",
+      "description": "Progress toward a target"
+    },
+    {
+      "chart_type": "pie",
+      "file": "charts/pie.md",
+      "description": "Share of a whole (also donut)"
+    },
+    {
+      "chart_type": "bar",
+      "file": "charts/bar.md",
+      "description": "Compare categories, ranking, top N"
+    },
+    {
+      "chart_type": "stacked_bar",
+      "file": "charts/stacked-bar.md",
+      "description": "Categories split by a second dimension"
+    },
+    {
+      "chart_type": "line",
+      "file": "charts/line.md",
+      "description": "Trend over time"
+    },
+    {
+      "chart_type": "area",
+      "file": "charts/area.md",
+      "description": "Trend of parts of a total"
+    },
+    {
+      "chart_type": "cumulative_line",
+      "file": "charts/cumulative-line.md",
+      "description": "Running total over time"
+    },
+    {
+      "chart_type": "combo",
+      "file": "charts/combo.md",
+      "description": "Bars plus line"
+    },
+    {
+      "chart_type": "scatter",
+      "file": "charts/scatter.md",
+      "description": "Two numeric measures per entity"
+    },
+    {
+      "chart_type": "histogram",
+      "file": "charts/histogram.md",
+      "description": "Distribution in buckets"
+    },
+    {
+      "chart_type": "funnel",
+      "file": "charts/funnel.md",
+      "description": "Conversion steps"
+    },
+    {
+      "chart_type": "heatmap",
+      "file": "charts/heatmap.md",
+      "description": "Two categorical axes, intensity"
+    },
+    {
+      "chart_type": "waterfall",
+      "file": "charts/waterfall.md",
+      "description": "Signed contributions to a total"
+    },
+    {
+      "chart_type": "cohort",
+      "file": "charts/cohort.md",
+      "description": "Retention by cohort"
+    },
+    {
+      "chart_type": "pivot",
+      "file": "charts/pivot.md",
+      "description": "Cross-tab"
+    },
+    {
+      "chart_type": "table",
+      "file": "charts/table.md",
+      "description": "Raw records"
+    }
+  ]
+}
